@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  cursor2api:
+    build: .
+    container_name: cursor2api
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data  # 持久化数据目录
+    restart: unless-stopped
+    environment:
+      - HOST=0.0.0.0
