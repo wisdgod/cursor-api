@@ -54,6 +54,7 @@ FROM scratch
 WORKDIR /app
 
 COPY --from=builder /app/cursor-api .
+COPY --from=builder /app/.env .
 
 ENV PORT=3000
 EXPOSE ${PORT}
